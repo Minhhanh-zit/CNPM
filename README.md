@@ -1,5 +1,5 @@
 # CNPM
-# [Analysis] Xác định phạm vi hệ thống đặt vé xem phim
+# Xác định phạm vi hệ thống đặt vé xem phim
 
 ## Mục tiêu
 
