@@ -16,6 +16,8 @@ Ngoài chức năng đặt vé thông thường, hệ thống có thêm chức n
 
 Hệ thống được xây dựng phục vụ mục đích học tập và demo đồ án môn Công nghệ phần mềm.
 
+Phạm vi triển khai tập trung vào 3 nhóm chức năng chính: chức năng cho khách hàng (Guest/User), chức năng cho quản trị viên (Admin) và chức năng hệ thống săn vé để xử lý cạnh tranh ghế trong suất chiếu hot.
+
 ---
 
 ## 2. Mục tiêu hệ thống
@@ -285,6 +287,16 @@ Các chức năng bao gồm:
 
 ---
 
+### 4.11. Phân nhóm chức năng theo phạm vi hệ thống
+
+Để đảm bảo phạm vi rõ ràng theo đúng mục tiêu đồ án, các chức năng trong hệ thống được phân theo 3 nhóm:
+
+- **Nhóm chức năng khách hàng (Guest/User):** xem phim, xem lịch chiếu, chọn ghế, đặt vé, thanh toán giả lập và theo dõi vé đã đặt.
+- **Nhóm chức năng quản trị viên (Admin):** quản lý phim, rạp/phòng chiếu/ghế, suất chiếu và theo dõi đơn đặt vé.
+- **Nhóm chức năng hệ thống săn vé:** giữ ghế tạm thời, countdown thời gian giữ ghế, đồng bộ trạng thái ghế thời gian thực và chống đặt trùng ghế khi nhiều người dùng thao tác đồng thời.
+
+---
+
 ## 5. Chức năng không nằm trong phạm vi đồ án
 
 Để đảm bảo phù hợp với thời gian và quy mô đồ án, hệ thống không triển khai các chức năng sau:
@@ -335,4 +347,3 @@ Sau khi hoàn thành issue này, nhóm cần có:
 - Cơ sở để viết user stories, use case và thiết kế hệ thống.
 
 ---
-
