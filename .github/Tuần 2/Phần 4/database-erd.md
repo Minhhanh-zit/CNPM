@@ -1,3 +1,5 @@
+# ERD hệ thống đặt vé xem phim
+
 ```mermaid
 erDiagram
     USERS ||--o{ BOOKING_ORDERS : creates
