@@ -1,0 +1,148 @@
+```mermaid
+erDiagram
+    USERS ||--o{ BOOKING_ORDERS : creates
+    USERS ||--o{ TICKETS : owns
+    USERS ||--o{ SHOWTIME_SEATS : holds
+
+    CINEMAS ||--o{ ROOMS : has
+    ROOMS ||--o{ SEATS : contains
+    ROOMS ||--o{ SHOWTIMES : hosts
+
+    MOVIES ||--o{ SHOWTIMES : has
+
+    SHOWTIMES ||--o{ SHOWTIME_SEATS : contains
+    SEATS ||--o{ SHOWTIME_SEATS : maps_to
+
+    SHOWTIMES ||--o{ BOOKING_ORDERS : receives
+    BOOKING_ORDERS ||--o{ TICKETS : generates
+    BOOKING_ORDERS ||--o{ PAYMENTS : has
+
+    SHOWTIME_SEATS ||--o| TICKETS : becomes
+
+    USERS {
+        BIGINT id PK
+        VARCHAR full_name
+        VARCHAR email UK
+        VARCHAR phone
+        VARCHAR password_hash
+        VARCHAR role
+        VARCHAR status
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    MOVIES {
+        BIGINT id PK
+        VARCHAR title
+        TEXT description
+        VARCHAR genre
+        INT duration_minutes
+        DATE release_date
+        VARCHAR poster_url
+        VARCHAR trailer_url
+        VARCHAR age_rating
+        VARCHAR status
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    CINEMAS {
+        BIGINT id PK
+        VARCHAR name
+        VARCHAR address
+        VARCHAR city
+        VARCHAR phone
+        VARCHAR status
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    ROOMS {
+        BIGINT id PK
+        BIGINT cinema_id FK
+        VARCHAR name
+        VARCHAR room_type
+        INT total_seats
+        VARCHAR status
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    SEATS {
+        BIGINT id PK
+        BIGINT room_id FK
+        VARCHAR seat_row
+        INT seat_number
+        VARCHAR seat_code
+        VARCHAR seat_type
+        VARCHAR status
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    SHOWTIMES {
+        BIGINT id PK
+        BIGINT movie_id FK
+        BIGINT room_id FK
+        DATETIME start_time
+        DATETIME end_time
+        DECIMAL base_price
+        DATETIME sale_open_time
+        VARCHAR status
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    SHOWTIME_SEATS {
+        BIGINT id PK
+        BIGINT showtime_id FK
+        BIGINT seat_id FK
+        VARCHAR status
+        DECIMAL price_amount
+        BIGINT held_by_user_id FK
+        DATETIME held_until
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    BOOKING_ORDERS {
+        BIGINT id PK
+        VARCHAR order_code UK
+        BIGINT user_id FK
+        BIGINT showtime_id FK
+        DECIMAL total_amount
+        VARCHAR status
+        DATETIME expires_at
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    TICKETS {
+        BIGINT id PK
+        VARCHAR ticket_code UK
+        BIGINT booking_order_id FK
+        BIGINT showtime_seat_id FK
+        BIGINT user_id FK
+        DECIMAL price_amount
+        VARCHAR qr_code
+        VARCHAR status
+        DATETIME issued_at
+        DATETIME checked_in_at
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    PAYMENTS {
+        BIGINT id PK
+        BIGINT booking_order_id FK
+        VARCHAR payment_code UK
+        DECIMAL amount
+        VARCHAR payment_method
+        VARCHAR status
+        DATETIME paid_at
+        DATETIME created_at
+        DATETIME updated_at
+    }
+```
+
+---
