@@ -4,34 +4,37 @@ Checklist này được dùng trước khi phát hành một phiên bản CineHu
 
 ## Versioning
 
-- [ ] Phiên bản trong `frontend/package.json` khớp với Git tag.
-- [ ] `CHANGELOG.md` có mục cho phiên bản mới.
-- [ ] Release notes nêu rõ phạm vi, giới hạn và known issues.
+- [x] Phiên bản trong `frontend/package.json` là `0.1.1`.
+- [x] `CHANGELOG.md` có mục cho phiên bản `0.1.1`.
+- [x] Release notes nêu rõ phạm vi, giới hạn và known issues.
 
 ## Quality gates
 
-- [ ] `npm ci` chạy thành công.
-- [ ] `npm run lint` chạy thành công.
-- [ ] `npm run build` chạy thành công.
-- [ ] GitHub Actions hoàn thành với trạng thái xanh.
-- [ ] Production artifact được tạo từ đúng commit phát hành.
+- [x] `npm ci` chạy thành công trên CI run #23.
+- [x] `npm run lint` chạy thành công trên CI run #23.
+- [x] `npm test` chạy thành công trên CI run #23.
+- [x] `npm run build` chạy thành công trên CI run #23.
+- [x] Production artifact được tạo từ commit đã được CI kiểm tra.
+- [ ] Chạy lại toàn bộ quality gates trên head commit mới nhất trước khi merge.
 
 ## Traceability
 
-- [ ] Các thay đổi liên kết tới issue và pull request liên quan.
+- [x] Release notes liên kết Pull Request #67 và Issue #68.
+- [x] Có test report tại `docs/TEST_REPORT_v0.1.1.md`.
 - [ ] Pull request có ít nhất một review độc lập.
-- [ ] Commit phát hành có thể truy vết tới yêu cầu và bằng chứng kiểm thử.
 
 ## Security and repository hygiene
 
-- [ ] Không có secret, token hoặc password trong source code.
-- [ ] Dependency audit không có lỗ hổng mức high hoặc critical chưa xử lý.
-- [ ] Repository không chứa build output hoặc file rác không cần thiết.
+- [x] Có `SECURITY.md` hướng dẫn báo cáo lỗ hổng.
+- [x] Có Dependabot theo dõi dependency frontend.
+- [ ] Xác nhận thủ công không có secret, token hoặc password trong source code.
+- [ ] Xác nhận không có lỗ hổng high hoặc critical chưa xử lý.
 
 ## Publishing
 
-- [ ] Merge PR sau khi CI pass.
-- [ ] Tạo annotated tag từ commit đã kiểm tra.
-- [ ] Đánh dấu pre-release nếu sản phẩm chưa sẵn sàng production.
-- [ ] Đính kèm artifact hoặc deployment link nếu phù hợp.
-- [ ] Ghi rõ contributors và known issues.
+- [ ] Merge PR sau khi CI trên head commit mới nhất pass.
+- [ ] Chạy CI trên `main` sau merge.
+- [ ] Tạo annotated tag `v0.1.1` từ commit đã kiểm tra.
+- [ ] Tạo GitHub Release và đánh dấu pre-release.
+- [ ] Đính kèm artifact hoặc liên kết workflow run của tag.
+- [ ] Ghi nhận reviewer và contributors thực tế.
