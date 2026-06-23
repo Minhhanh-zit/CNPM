@@ -48,8 +48,9 @@ npm run build
 - Pull request: https://github.com/Minhhanh-zit/CNPM/pull/67
 - Tracking issue: https://github.com/Minhhanh-zit/CNPM/issues/68
 - GitHub Actions workflow: `Frontend CI`
-- Successful run: #23, run ID `27817905564`
-- Artifact: `cinehunt-frontend-d482035fbff0b9b6cc4fe34817429ed1532b8c1b`
+- Successful baseline run: #23, run ID `27817905564`
+- Baseline artifact: `cinehunt-frontend-d482035fbff0b9b6cc4fe34817429ed1532b8c1b`
+- Final release evidence: [cần cập nhật bằng run trên head commit mới nhất hoặc tag `v0.1.1`]
 
 ## Known Issues
 
