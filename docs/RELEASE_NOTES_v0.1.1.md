@@ -2,21 +2,27 @@
 
 ## Summary
 
-CineHunt v0.1.1 tập trung cải thiện khả năng kiểm chứng và tái lập của bản MVP. Phiên bản này đồng bộ metadata phiên bản frontend, bổ sung GitHub Actions để kiểm tra lint/build và tạo production artifact, đồng thời bổ sung checklist phát hành chuyên nghiệp.
+CineHunt v0.1.1 tập trung cải thiện khả năng kiểm chứng và tái lập của bản MVP. Phiên bản này đồng bộ metadata frontend, thay giao diện Vite mặc định bằng luồng CineHunt có thể demo, bổ sung automated tests, GitHub Actions và production artifact.
 
 Đây là bản pre-release phục vụ học tập và demo, chưa được khuyến nghị sử dụng trong môi trường production.
 
-## Added
+## New Features
 
-- GitHub Actions workflow chạy `npm ci`, `npm run lint` và `npm run build`.
-- Production build artifact được tạo từ GitHub Actions.
+- Trang chủ hiển thị danh sách phim.
+- Trang chi tiết phim và lựa chọn suất chiếu.
+- Luồng chọn ghế với kiểm tra trạng thái ghế.
+- Tính tổng tiền theo danh sách ghế đã chọn.
+- Thanh toán giả lập và hiển thị thông tin vé.
+- Trang Not Found cho route không tồn tại.
+
+## Engineering Improvements
+
+- GitHub Actions chạy `npm ci`, `npm run lint`, `npm test` và `npm run build`.
+- Production build artifact được tạo từ đúng commit CI.
+- Automated tests cho các quy tắc nghiệp vụ frontend cốt lõi.
 - Dependabot theo dõi dependency npm của frontend.
-- Checklist kiểm tra versioning, CI, traceability, security và publishing.
-
-## Changed
-
-- Đổi tên package frontend thành `cinehunt-frontend`.
-- Đồng bộ phiên bản frontend thành `0.1.1`.
+- Release checklist cho versioning, CI, traceability, security và publishing.
+- Đồng bộ package name thành `cinehunt-frontend` và version thành `0.1.1`.
 
 ## Installation
 
@@ -33,19 +39,26 @@ npm run dev
 cd frontend
 npm ci
 npm run lint
+npm test
 npm run build
 ```
 
-Bằng chứng CI và artifact phải được liên kết sau khi workflow của pull request hoàn thành.
+## Testing Evidence
+
+- Pull request: https://github.com/Minhhanh-zit/CNPM/pull/67
+- Tracking issue: https://github.com/Minhhanh-zit/CNPM/issues/68
+- GitHub Actions workflow: `Frontend CI`
+- Successful run: #23, run ID `27817905564`
+- Artifact: `cinehunt-frontend-d482035fbff0b9b6cc4fe34817429ed1532b8c1b`
 
 ## Known Issues
 
 - Thanh toán hiện được mô phỏng.
-- Automated tests chưa được bổ sung trong thay đổi này.
+- Automated tests hiện tập trung vào nghiệp vụ frontend cốt lõi, chưa phải end-to-end tests.
 - Một số chức năng quản trị chưa hoàn thiện.
 - API, cấu trúc dữ liệu và cấu hình có thể thay đổi trước `v1.0.0`.
 
 ## Contributors
 
 - `@Minhhanh-zit`
-- [Bổ sung thành viên review hoặc đóng góp thực tế trước khi publish release]
+- [Bổ sung reviewer hoặc contributor thực tế trước khi publish release]
