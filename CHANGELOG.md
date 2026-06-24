@@ -9,9 +9,36 @@ Tất cả thay đổi đáng chú ý của dự án CineHunt được ghi nhậ
 ### Planned
 
 - Hoàn thiện xử lý đồng thời khi nhiều người dùng giữ ghế.
-- Mở rộng kiểm thử tự động cho frontend và backend.
+- Mở rộng kiểm thử end-to-end cho frontend và backend.
 - Hoàn thiện trang quản trị.
 - Cải thiện tài liệu API và triển khai.
+
+## [0.1.1] - 2026-06-23
+
+### Added
+
+- Bổ sung giao diện CineHunt có thể demo thay cho Vite starter mặc định.
+- Bổ sung trang chủ, chi tiết phim, chọn ghế, thanh toán giả lập và Not Found.
+- Bổ sung automated tests cho nghiệp vụ frontend cốt lõi.
+- Bổ sung GitHub Actions chạy cài đặt dependency, lint, test và production build.
+- Bổ sung production build artifact từ đúng commit CI.
+- Bổ sung Dependabot và release checklist.
+
+### Changed
+
+- Đổi package name thành `cinehunt-frontend`.
+- Đồng bộ package version thành `0.1.1`.
+- Cải thiện release notes với testing evidence, known issues và traceability.
+
+### Fixed
+
+- Sửa sự không nhất quán giữa Git tag dự kiến và version metadata của frontend.
+
+### Known Issues
+
+- Thanh toán vẫn đang được mô phỏng.
+- Automated tests chưa bao phủ end-to-end.
+- Một số chức năng quản trị chưa hoàn thiện.
 
 ## [0.1.0] - 2026-06-19
 
@@ -26,7 +53,6 @@ Tất cả thay đổi đáng chú ý của dự án CineHunt được ghi nhậ
 
 ### Changed
 
-- Chuẩn hóa phiên bản frontend thành `0.1.0`.
 - Chuẩn hóa tài liệu chuẩn bị GitHub Release đầu tiên.
 
 ### Known Issues
